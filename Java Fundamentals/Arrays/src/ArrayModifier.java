@@ -11,24 +11,20 @@ public class ArrayModifier {
             String[] currentCommandArr = scan.nextLine().split(" ");
             boolean isEnd = false;
 
-            switch (currentCommandArr[0]){
-                case "swap":
+            switch (currentCommandArr[0]) {
+                case "swap" -> {
                     int temp = arrayInput[Integer.parseInt(currentCommandArr[1])];
                     arrayInput[Integer.parseInt(currentCommandArr[1])] = arrayInput[Integer.parseInt(currentCommandArr[2])];
                     arrayInput[Integer.parseInt(currentCommandArr[2])] = temp;
-                    break;
-                case "multiply":
-                    arrayInput[Integer.parseInt(currentCommandArr[1])] =
-                            arrayInput[Integer.parseInt(currentCommandArr[1])] * arrayInput[Integer.parseInt(currentCommandArr[2])];
-                    break;
-                case "decrease":
+                }
+                case "multiply" -> arrayInput[Integer.parseInt(currentCommandArr[1])] =
+                        arrayInput[Integer.parseInt(currentCommandArr[1])] * arrayInput[Integer.parseInt(currentCommandArr[2])];
+                case "decrease" -> {
                     for (int i = 0; i < arrayInput.length; i++) {
                         arrayInput[i]--;
                     }
-                    break;
-                case "end":
-                    isEnd = true;
-                    break;
+                }
+                case "end" -> isEnd = true;
             }
             if(isEnd){
                 break;
