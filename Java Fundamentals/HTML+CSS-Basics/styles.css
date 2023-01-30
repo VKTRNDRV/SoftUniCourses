@@ -1,0 +1,24 @@
+.colorDIV {
+    display: inline-block;
+}
+
+.green{
+    display: inline-block;
+    background-color: green;
+}
+.blue{
+    display: inline-block;
+    background-color: blue;
+}
+.red{
+    display: inline-block;
+    background-color: red;
+}
+.purple{
+    display: inline-block;
+    background-color: purple;
+}
+.orange{
+    display: inline-block;
+    background-color: orange;
+}
