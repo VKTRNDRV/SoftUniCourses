@@ -6,7 +6,7 @@ public class GreaterOfTwoValues {
         Scanner scan = new Scanner(System.in);
 
         String dataType = scan.nextLine();
-        String firstItem = scan.nextLine(); 
+        String firstItem = scan.nextLine();
         String secondItem = scan.nextLine();
 
         String output = getMax(dataType,firstItem,secondItem);
