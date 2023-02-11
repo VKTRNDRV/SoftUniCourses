@@ -7,22 +7,19 @@ public class AppendArrays {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
-        String inputLine = scan.nextLine();
-        String[] allArrays = inputLine.split("\\|");
+        String[] allArrays = scan.nextLine().split("\\|");
 
-        for (int i = allArrays.length-1; i >= 0; i--) {
-            String currentArrayStr = allArrays[i];
-            List<String> currentSequence = new ArrayList<>();
+        ArrayList<String> output = new ArrayList<>();
 
-            for(int c = 0; c < currentArrayStr.length(); c++){
-                if(currentArrayStr.charAt(c) != ' '){
-                    currentSequence.add(String.valueOf(currentArrayStr.charAt(c)));
-                }
+        for (int i = allArrays.length - 1; i >= 0; i--) {
+            String[] currentSequence = allArrays[i].trim().split("\\s+");
+
+            for(String currentElement : currentSequence){
+                output.add(currentElement);
             }
 
-            for (String currentElement : currentSequence) {
-                System.out.printf("%s ", currentElement);
-            }
+            output.remove("");
         }
+        System.out.println(String.join(" ", output));
     }
 }
