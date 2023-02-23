@@ -19,7 +19,7 @@ public class GroomingSalon {
     }
 
     public void add(Pet pet){
-        if(this.data.size() < (this.capacity - 1)){
+        if(this.data.size() < this.capacity){
             this.data.add(pet);
         }
     }
