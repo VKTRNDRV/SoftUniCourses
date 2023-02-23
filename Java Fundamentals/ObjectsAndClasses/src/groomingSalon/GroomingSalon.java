@@ -8,6 +8,7 @@ public class GroomingSalon {
     private int capacity;
     private List<Pet> data;
 
+
     public GroomingSalon(int capacity, List<Pet> data){
         this.capacity = capacity;
         this.data = data;
