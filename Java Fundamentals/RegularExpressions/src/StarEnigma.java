@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -9,7 +11,7 @@ public class StarEnigma {
         ArrayList<String> attackedPlanets = new ArrayList<>();
         ArrayList<String> destroyedPlanets = new ArrayList<>();
         Pattern pattern = Pattern.compile
-                ("(?<planetName>@[A-Za-z]+)[^-@!:>]*(?<population>:\\d+)[^-@!:>]*(?<attackType>![AD]!)[^-@!:>]*(?<soldierCount>->\\d+)");
+                ("(?<planetName>@[A-Za-z]+)[^-@!:>]*(?<population>:\\d+)[^-@!:>]*(?<attackType>![AD]!)[^-@!:>]*(?<soldierCount>->\\d+)[^-@!:>]*");
 
         int numOfLines = Integer.parseInt(scan.nextLine());
         for(int i = 1; i <= numOfLines; i++){
@@ -59,16 +61,13 @@ public class StarEnigma {
             }
         }
 
+        Collections.reverse(attackedPlanets);
+        Collections.reverse(destroyedPlanets);
+
         System.out.printf("Attacked planets: %d%n", attackedPlanets.size());
-        for(int i = attackedPlanets.size() - 1; i >= 0; i--){
-            String planet = attackedPlanets.get(i);
-            System.out.printf("-> %s%n", planet);
-        }
+        for(String planet : attackedPlanets){System.out.printf("-> %s%n", planet);}
 
         System.out.printf("Destroyed planets: %d%n", destroyedPlanets.size());
-        for(int i = destroyedPlanets.size() - 1; i >= 0; i--){
-            String planet = destroyedPlanets.get(i);
-            System.out.printf("-> %s%n", planet);
-        }
+        for(String planet : destroyedPlanets){System.out.printf("-> %s%n", planet);}
     }
 }
