@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Phonebook</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link th:href="@{/static/bootstrap.css}" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" th:href="@{/}">Phonebook</a>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container">
+    <legend>All Contacts:</legend>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Number</th>
+            <th scope="col">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="contact : ${contacts}">
+            <td th:text="${contact.name}"></td>
+            <td th:text="${contact.number}"></td>
+            <td><button type="submit" class="btn btn-primary">Delete</button></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <form class="form-horizontal" th:method="POST">
+        <fieldset>
+            <div class="form-group">
+                <label for="name" class="col-lg-2 control-label">Name</label>
+                <div class="col-lg-10">
+                    <input type="text" autofocus="autofocus" name="name" title="Name" class="form-control"
+                           id="name"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="number" class="col-lg-2 control-label">Number</label>
+                <div class="col-lg-10">
+                    <input type="text" autofocus="autofocus" name="number" title="Number" class="form-control"
+                           id="number"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                    <button type="submit" class="btn btn-primary">Add Contact</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+
+    <hr/>
+
+    <footer>
+        <p>&copy; Software University</p>
+    </footer>
+</div>
+
+</body>
+</html>
