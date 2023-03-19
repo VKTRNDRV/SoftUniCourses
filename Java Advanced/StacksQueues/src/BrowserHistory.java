@@ -5,20 +5,31 @@ public class BrowserHistory {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        ArrayDeque<String> historyStack = new ArrayDeque<>();
+        ArrayDeque<String> historyQueue = new ArrayDeque<>();
+        ArrayDeque<String> forwardQueue = new ArrayDeque<>();
         while (true){
             String line = scanner.nextLine();
             if(line.equals("Home")){break;}
 
             if(line.equals("back")){
-                if(historyStack.size() >= 2){
-                    historyStack.pop();
-                    System.out.println(historyStack.peek());
+                if(historyQueue.size() >= 2){
+                    forwardQueue.add(historyQueue.pop());
+                    System.out.println(historyQueue.peek());
                 }else{
                     System.out.println("no previous URLs");
                 }
+
+            }else if(line.equals("forward")){
+                if(!forwardQueue.isEmpty()){
+                    historyQueue.push(forwardQueue.removeLast());
+                    System.out.println(historyQueue.peek());
+                }else{
+                    System.out.println("no next URLs");
+                }
+
             }else{
-                historyStack.push(line);
+                historyQueue.push(line);
+                forwardQueue.clear();
                 System.out.println(line);
             }
         }
