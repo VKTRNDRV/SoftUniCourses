@@ -1,6 +1,7 @@
+import java.util.Map;
 import java.util.Scanner;
 
-public class PrintDiagonalsOfSquareMatrix {
+public class DiagonalDifference {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int size = Integer.parseInt(scanner.nextLine());
@@ -12,16 +13,16 @@ public class PrintDiagonalsOfSquareMatrix {
             }
         }
 
-        //print first diagonal
+        int firstDiagonalSum = 0;
         for (int i = 0; i < size; i++) {
-            System.out.printf("%s ", squareArr[i][i]);
+            firstDiagonalSum += Integer.parseInt(squareArr[i][i]);
         }
-        System.out.println();
 
-        //print second diagonal
+        int secondDiagonalSum = 0;
         for (int i = size - 1; i >= 0; i--) {
-            System.out.printf("%s ", squareArr[i][(size - 1) - i]);
+            secondDiagonalSum += Integer.parseInt(squareArr[i][(size - 1) - i]);
         }
-        System.out.println();
+
+        System.out.println(Math.max(firstDiagonalSum,secondDiagonalSum) - Math.min(firstDiagonalSum,secondDiagonalSum));
     }
 }
