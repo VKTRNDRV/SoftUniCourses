@@ -15,13 +15,6 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
             <a class="navbar-brand" th:href="@{/}">Phonebook</a>
         </div>
     </div>
@@ -33,16 +26,15 @@
     <table class="table">
         <thead>
         <tr>
-            <th scope="col">Name</th>
-            <th scope="col">Number</th>
-            <th scope="col">Action</th>
+            <th scope="col">Name:</th>
+            <th scope="col">Number:</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="contact : ${contacts}">
             <td th:text="${contact.name}"></td>
             <td th:text="${contact.number}"></td>
-            <td><button type="submit" class="btn btn-primary">Delete</button></td>
+            </td>
         </tr>
         </tbody>
     </table>
@@ -73,9 +65,7 @@
 
     <hr/>
 
-    <footer>
-        <p>&copy; Software University</p>
-    </footer>
+
 </div>
 
 </body>
