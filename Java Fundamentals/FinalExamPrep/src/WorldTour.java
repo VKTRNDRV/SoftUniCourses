@@ -25,16 +25,18 @@ public class WorldTour {
                     int removeEndIndex = Math.max(Integer.parseInt(commandArr[1]), Integer.parseInt(commandArr[2]));
                     if((removeStartIndex >= 0 && removeStartIndex < locationsStr.length())
                     && (removeEndIndex >= 0 && removeEndIndex < locationsStr.length())){
-                        locationsStr.delete(removeStartIndex, removeEndIndex + 1);
+                        locationsStr.replace(removeStartIndex, removeEndIndex + 1, "");
                     }
                     break;
 
                 case "Switch":
-                    Pattern oldStrPattern = Pattern.compile(commandArr[1]);
-                    Matcher oldStrMatcher = oldStrPattern.matcher(locationsStr);
+                    String stringOld = commandArr[1];
                     String stringNew = commandArr[2];
-                    if(oldStrMatcher.find()){
-                        locationsStr.replace(oldStrMatcher.start(), oldStrMatcher.end(), stringNew);
+                    if(locationsStr.toString().contains(stringOld)){
+                        String tempStr = locationsStr.toString();
+                        tempStr = tempStr.replace(stringOld, stringNew);
+                        locationsStr.setLength(0);
+                        locationsStr.append(tempStr);
                     }
 
                     break;
