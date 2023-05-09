@@ -8,16 +8,18 @@ public class ReverseNumsWithStack {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int[] intArr = Arrays.stream(scanner.nextLine().split("\\s+"))
-                .mapToInt(value -> Integer.parseInt(value)).toArray();
+        int[] nums = Arrays.stream(scanner.nextLine()
+                .split("\\s+"))
+                .mapToInt(s -> Integer.parseInt(s))
+                .toArray();
 
-        ArrayDeque<Integer> numsQueue = new ArrayDeque<>();
-        for(int num : intArr){
-            numsQueue.add(num);
+        ArrayDeque<Integer> stack = new ArrayDeque<>();
+        for(int n : nums){
+            stack.push(n);
         }
 
-        while (!numsQueue.isEmpty()){
-            System.out.printf("%d ", numsQueue.removeLast());
+        while (!stack.isEmpty()){
+            System.out.printf("%d ", stack.pop());
         }
     }
 }

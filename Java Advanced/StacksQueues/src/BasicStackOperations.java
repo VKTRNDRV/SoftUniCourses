@@ -6,37 +6,43 @@ import java.util.stream.Collectors;
 public class BasicStackOperations {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        int[] vars = Arrays.stream(scanner.nextLine()
+                .split("\\s+"))
+                .mapToInt(s -> Integer.parseInt(s))
+                .toArray();
 
-        int[] addPopTestNums = Arrays.stream(scanner.nextLine().split("\\s+"))
-                .mapToInt(value -> Integer.parseInt(value)).toArray();
-        int elementsToAdd = addPopTestNums[0];
-        int elementsToPop = addPopTestNums[1];
-        int testElement = addPopTestNums[2];
-        int[] numsArr = Arrays.stream(scanner.nextLine().split("\\s+"))
-                .mapToInt(value -> Integer.parseInt(value)).toArray();
-        ArrayDeque<Integer> numsStack = new ArrayDeque<>();
-        for (int i = 0; i < elementsToAdd; i++) {
-            numsStack.push(numsArr[i]);
+        int pushMax = vars[0];
+        int popMax = vars[1];
+        int testNum = vars[2];
+        ArrayDeque<Integer> nums = new ArrayDeque<>();
+
+        for (int i = 0; i < pushMax; i++) {
+            int num = scanner.nextInt();
+            nums.push(num);
         }
 
-        for (int i = 0; i < elementsToPop; i++) {
-            numsStack.pop();
+        for (int i = 0; i < popMax && !nums.isEmpty(); i++) {
+            nums.pop();
         }
 
-        if(numsStack.contains(testElement)){
-            System.out.println("true");
+        if(nums.contains(testNum)){
+            System.out.println(true);
         }else{
-            if(!numsStack.isEmpty()){
-                int minNum = numsStack.pop();
-                while (!numsStack.isEmpty()){
-                    int thisNum = numsStack.pop();
-                    if(thisNum < minNum){minNum = thisNum;}
-                }
-                System.out.println(minNum);
+            int minNum;
+            if(nums.isEmpty()){
+                minNum = 0;
             }else{
-                System.out.println(0);
+                minNum = nums.pop();
             }
 
+            while (!nums.isEmpty()){
+                int poppedNum = nums.pop();
+                if(poppedNum < minNum){
+                    minNum = poppedNum;
+                }
+            }
+
+            System.out.println(minNum);
         }
     }
 }

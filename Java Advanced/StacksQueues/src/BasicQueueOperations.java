@@ -6,36 +6,43 @@ public class BasicQueueOperations {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int[] addPopTestNums = Arrays.stream(scanner.nextLine().split("\\s+"))
-                .mapToInt(value -> Integer.parseInt(value)).toArray();
-        int elementsToAdd = addPopTestNums[0];
-        int elementsToRemove = addPopTestNums[1];
-        int testElement = addPopTestNums[2];
-        int[] numsArr = Arrays.stream(scanner.nextLine().split("\\s+"))
-                .mapToInt(value -> Integer.parseInt(value)).toArray();
-        ArrayDeque<Integer> numsQueue = new ArrayDeque<>();
-        for (int i = 0; i < elementsToAdd; i++) {
-            numsQueue.add(numsArr[i]);
+        int[] vars = Arrays.stream(scanner.nextLine()
+                .split("\\s+"))
+                .mapToInt(s -> Integer.parseInt(s))
+                .toArray();
+
+        int addMax = vars[0];
+        int removeMax = vars[1];
+        int testNum = vars[2];
+
+        ArrayDeque<Integer> nums = new ArrayDeque<>();
+        for (int i = 0; i < addMax; i++) {
+            int n = scanner.nextInt();
+            nums.add(n);
         }
 
-        for (int i = 0; i < elementsToRemove; i++) {
-            numsQueue.poll();
+        for (int i = 0; i < removeMax && !nums.isEmpty(); i++) {
+            nums.pop();
         }
 
-        if(numsQueue.contains(testElement)){
-            System.out.println("true");
-        }else{
-            if(!numsQueue.isEmpty()){
-                int minNum = numsQueue.poll();
-                while (!numsQueue.isEmpty()){
-                    int thisNum = numsQueue.poll();
-                    if(thisNum < minNum){minNum = thisNum;}
-                }
-                System.out.println(minNum);
+        if(nums.contains(testNum)){
+            System.out.println(true);
+        }else {
+            int minNum;
+            if(nums.isEmpty()){
+                minNum = 0;
             }else{
-                System.out.println(0);
+                minNum = nums.remove();
             }
 
+            while (!nums.isEmpty()){
+                int n = nums.pop();
+                if(n < minNum){
+                    minNum = n;
+                }
+            }
+
+            System.out.println(minNum);
         }
     }
 }
