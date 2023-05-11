@@ -22,6 +22,7 @@ public class MatrixShuffling {
         while (true){
             String[] thisLine = scanner.nextLine().split(" ");
             if(thisLine[0].equals("END")){break;}
+
             boolean isValid = true;
             if(!thisLine[0].equals("swap") || thisLine.length != 5){isValid = false;
             }else if(Integer.parseInt(thisLine[1]) < 0 || Integer.parseInt(thisLine[1]) >= rowsMax) {isValid = false;

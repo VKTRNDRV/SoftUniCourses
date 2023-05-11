@@ -23,6 +23,8 @@ public class DiagonalDifference {
             secondDiagonalSum += Integer.parseInt(squareArr[i][(size - 1) - i]);
         }
 
-        System.out.println(Math.max(firstDiagonalSum,secondDiagonalSum) - Math.min(firstDiagonalSum,secondDiagonalSum));
+        System.out.println(
+                Math.max(firstDiagonalSum,secondDiagonalSum) -
+                Math.min(firstDiagonalSum,secondDiagonalSum));
     }
 }
