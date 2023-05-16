@@ -124,3 +124,32 @@ select user_name, ip_address
 from users
 where ip_address like '___.1%.%.___'
 order by user_name;
+
+
+
+-- 15. Show All Games with Duration and Part of the Day @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+select `name` as `game`,
+case
+	when hour(`start`)  >= 0 and hour(`start`) < 12
+		then 'Morning'
+	when hour(`start`)  >= 12 and hour(`start`) < 18
+		then 'Afternoon'
+	when hour(`start`)  >= 18 and hour(`start`) < 124
+		then 'Evening'
+end as `Part of the Day`,
+case
+	when duration <= 3 then 'Extra Short'
+    when duration > 3 and duration <= 6 then 'Short'
+    when duration > 6 and duration <= 10 then 'Long'
+    when duration > 10 or duration is null then 'Extra Long'
+end as `Duration`
+from games;
+
+
+
+-- 16. Orders Table @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+select product_name, 
+	order_date,
+    date_add(order_date, interval 3 day) as `pay_due`,
+    date_add(order_date, interval 1 month) as `deliver_due`   
+from orders;
