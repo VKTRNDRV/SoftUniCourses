@@ -104,3 +104,81 @@ where department_id in (2, 5, 7)
 	and hire_date > '2000-01-01 00:00:00.000000' 
 group by department_id
 order by department_id;
+
+
+
+-- 13. Employees Average Salaries @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+CREATE TABLE `salary_more_than` AS
+SELECT *
+FROM `employees`
+WHERE `salary` > 30000;
+
+delete from salary_more_than
+where manager_id = 42;
+
+update salary_more_than
+set salary = salary + 5000
+where department_id = 1;
+
+select department_id, avg(salary) as avg_salary
+from salary_more_than
+group by department_id
+order by department_id;
+
+
+
+-- 14. Employees Maximum Salaries @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+select department_id, max(salary) as max_salary
+from employees
+group by department_id
+having max_salary < 30000 or max_salary > 70000
+order by department_id;
+
+
+
+-- 15. Employees Count Salaries @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+select count(employee_id) as ''
+from employees
+where manager_id is null
+	and salary is not null;
+    
+
+
+-- 16. 3rd Highest Salary* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+select distinct department_id, 
+	(
+    select distinct salary
+    from employees `e`
+    where e.`department_id` = `employees`.`department_id`
+    order by salary desc
+    limit 1 offset 2
+    ) as third_highest_salary
+from employees
+having third_highest_salary is not null
+order by department_id;
+
+
+
+-- 17. Salary Challenge @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+select first_name, last_name, department_id
+from employees
+where salary > (
+				select avg(salary)
+                from employees as e
+                where e.department_id = employees.department_id
+				)
+order by department_id, employee_id
+limit 10;
+
+
+
+-- 18. Departments Total Salaries @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+select department_id,
+	(
+    select sum(salary)
+    from employees m
+    where m.department_id = e.department_id
+    ) as total_salary
+from employees e
+group by department_id
+order by department_id;
