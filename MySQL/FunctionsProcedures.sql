@@ -155,6 +155,73 @@ call usp_calculate_future_value_for_account(1, 0.1);
 
 
 
+# 12. Deposit Money #####################################################################################
+delimiter $$
+create procedure usp_deposit_money(acc_id int, money_amount decimal(19, 4))
+begin
+	start transaction;
+	if money_amount <= 0
+		then rollback;
+    else
+		update accounts
+		set balance = balance + money_amount
+		where id = acc_id;
+	end if;
+end
+$$ delimiter ;
+
+
+
+# 13. Withdraw Money #####################################################################################
+delimiter $$
+create procedure usp_withdraw_money(acc_id int, money_amount decimal(19, 4))
+begin
+	start transaction;
+	if money_amount <= 0
+		then rollback;
+    
+    elseif (select count(id) from accounts where id = acc_id) <> 1
+		then rollback;
+    
+    elseif ((select accounts.balance from accounts where accounts.id = acc_id) < money_amount)
+		then rollback;
+    else
+		update accounts
+		set balance = balance - money_amount
+		where id = acc_id;
+	end if;
+end
+$$ delimiter ;
+
+
+
+# 14. Money Transfer #####################################################################################
+delimiter $$
+create procedure usp_transfer_money(from_account_id int, to_account_id int, amount decimal(19, 4))
+begin
+	start transaction;
+    update accounts
+    set balance = balance - amount
+    where id = from_account_id;
+    
+    update accounts
+    set balance = balance + amount
+    where id = to_account_id;
+    
+    if amount <= 0
+		then rollback;
+	elseif (from_account_id <= 0) or (to_account_id <= 0) or (from_account_id = to_account_id) 
+		then rollback;
+	elseif ((select accounts.balance from accounts where accounts.id = from_account_id) < amount)
+		then rollback;
+	else
+		commit;
+	end if;
+end
+$$ delimiter ;
+
+
+
 
 
 
