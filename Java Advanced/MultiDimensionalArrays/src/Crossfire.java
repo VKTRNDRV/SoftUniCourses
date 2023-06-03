@@ -108,34 +108,26 @@ public class Crossfire {
         }
     }
 
-    public static void deleteEmptyRows(int[][] array){
-
-        //iterating rows except last
-        for (int row = 0; row < array.length - 1; row++) {
-
-            //checking if row is empty
+    public static void deleteEmptyRows(int[][] array) {
+        int targetRow = 0; // Track the position to move non-empty rows
+        for (int row = 0; row < array.length; row++) {
             boolean isEmpty = true;
             for (int col = 0; col < array[0].length; col++) {
-                if(array[row][col] != 0){
+                if (array[row][col] != 0) {
                     isEmpty = false;
                     break;
                 }
             }
-
-            if(isEmpty){
-                //moving all cells from below columns up
-                for (int thisRow = row; thisRow < array.length; thisRow++) {
-                    if(thisRow < array.length - 1) {
-                        for (int col = 0; col < array[0].length - 1; col++) {
-                            array[thisRow][col] = array[thisRow + 1][col];
-                        }
-                    }else{
-                        for (int col = 0; col < array[0].length - 1; col++) {
-                            array[thisRow][col] = 0;
-                        }
-                    }
+            if (!isEmpty) {
+                if (targetRow != row) {
+                    System.arraycopy(array[row], 0, array[targetRow], 0, array[0].length);
                 }
+                targetRow++;
             }
+        }
+        // Fill the remaining rows with zeroes
+        for (int row = targetRow; row < array.length; row++) {
+            Arrays.fill(array[row], 0);
         }
     }
 }
