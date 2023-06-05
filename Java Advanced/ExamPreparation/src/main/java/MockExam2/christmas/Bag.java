@@ -1,4 +1,4 @@
-package christmas;
+package MockExam2.christmas;
 
 import java.util.ArrayList;
 import java.util.List;

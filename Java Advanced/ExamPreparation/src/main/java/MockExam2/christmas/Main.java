@@ -1,4 +1,4 @@
-package christmas;
+package MockExam2.christmas;
 
 public class Main {
     public static void main(String[] args) {
