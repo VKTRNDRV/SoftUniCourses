@@ -59,15 +59,12 @@ public class ApocalypsePreparation {
 
         // sorting items by value and name
         List<Map.Entry<String, Integer>> entries = new ArrayList<>(healingItems.entrySet());
-        Collections.sort(entries, new Comparator<Map.Entry<String, Integer>>() {
-            @Override
-            public int compare(Map.Entry<String, Integer> entry1, Map.Entry<String, Integer> entry2) {
-                int valueComparison = entry2.getValue().compareTo(entry1.getValue());
-                if (valueComparison != 0) {
-                    return valueComparison;
-                } else {
-                    return entry1.getKey().compareTo(entry2.getKey());
-                }
+        Collections.sort(entries, (entry1, entry2) -> {
+            int valueComparison = entry2.getValue().compareTo(entry1.getValue());
+            if (valueComparison != 0) {
+                return valueComparison;
+            } else {
+                return entry1.getKey().compareTo(entry2.getKey());
             }
         });
         Map<String, Integer> sortedItems = new LinkedHashMap<>();
