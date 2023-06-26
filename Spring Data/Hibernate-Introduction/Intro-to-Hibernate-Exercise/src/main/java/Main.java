@@ -56,6 +56,25 @@ public class Main {
                 System.out.println(
                         GetEmployeesWithProject.execute(id)
                 );
+
+            } else if (command.equals("9")) {
+                System.out.println(FindTheLatestTenProjects.execute());
+
+            } else if (command.equals("10")) {
+                System.out.println(IncreaseSalaries.execute());
+
+            } else if (command.equals("11")) {
+                System.out.println(FIRST_NAME_PATTERN_PROMPT);
+                String pattern = scanner.nextLine();
+                System.out.println(FindEmployeesByFirstName.execute(pattern));
+
+            } else if (command.equals("12")) {
+                System.out.println(EmployeesMaximumSalaries.execute());
+
+            } else if (command.equals("13")) {
+                System.out.println(TOWN_NAME_PROMPT);
+                String townName = scanner.nextLine();
+                System.out.println(RemoveTowns.execute(townName));
             }
 
             System.out.println(EXERCISE_NUMBER_PROMPT);
@@ -65,14 +84,19 @@ public class Main {
 
     public static final String EXERCISE_NUMBER_PROMPT =
             "===========================================================================================\n" +
-                    "Enter exercise number or END to end program:\n" +
-                    "2. Change casing\n" +
-                    "3. Contains Employee\n" +
-                    "4. Employees with a Salary Over 50 000\n" +
-                    "5. Employees from Department\n" +
-                    "6. Adding a New Address and Updating the Employee\n" +
-                    "7. Addresses with Employee Count\n" +
-                    "8. Get Employees with Project\n";
+            "Enter exercise number or END to end program:\n" +
+            "   2. Change casing\n" +
+            "   3. Contains Employee\n" +
+            "   4. Employees with a Salary Over 50 000\n" +
+            "   5. Employees from Department\n" +
+            "   6. Adding a New Address and Updating the Employee\n" +
+            "   7. Addresses with Employee Count\n" +
+            "   8. Get Employees with Project\n" +
+            "   9. Find the Latest 10 Projects\n" +
+            "   10. Increase Salaries\n" +
+            "   11. Find Employees by First Name\n" +
+            "   12. Employees Maximum Salaries\n" +
+            "   13. Remove Towns";
 
     public static final String EMPLOYEE_NAME_PROMPT =
             "Enter employee's first and last name:";
@@ -80,5 +104,8 @@ public class Main {
             "Enter employee's ID:";
     public static final String EMPLOYEE_LAST_NAME_PROMPT =
             "Enter employee's last name:";
-
+    public static final String FIRST_NAME_PATTERN_PROMPT =
+            "Enter first name start pattern:";
+    public static final String TOWN_NAME_PROMPT =
+            "Enter name of town to be deleted:";
 }
