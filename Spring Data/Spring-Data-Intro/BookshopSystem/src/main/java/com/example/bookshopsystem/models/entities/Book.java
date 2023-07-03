@@ -50,4 +50,11 @@ public class Book extends BaseEntity {
         return this.title + " " + this.releaseDate + " " + this.copies;
     }
 
+    public Book(String title, EditionType editionType, AgeRestriction ageRestriction, BigDecimal price){
+        setTitle(title);
+        setEditionType(editionType);
+        setAgeRestriction(ageRestriction);
+        setPrice(price);
+    }
+
 }

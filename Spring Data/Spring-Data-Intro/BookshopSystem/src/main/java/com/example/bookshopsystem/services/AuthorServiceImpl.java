@@ -65,4 +65,24 @@ public class AuthorServiceImpl implements AuthorService{
     public List<Author> getAllAuthorsOrederByBooksDesc() {
         return this.authorRepository.findAllDistinctOrderByBooks();
     }
+
+    @Override
+    public List<Author> getAuthorsFirstNameEndsIn(String end) {
+        return this
+                .authorRepository
+                .findAllByFirstNameEndingWith(end);
+    }
+
+    @Override
+    public List<Author> findAuthorByBooksContaining(Book book) {
+        return this.authorRepository
+                .findAuthorByBooksContaining(book);
+    }
+
+    @Override
+    public int getTotalBookCopiesByAuthor(Author author) {
+        return this
+                .authorRepository
+                .getTotalBookCopiesByAuthor(author);
+    }
 }

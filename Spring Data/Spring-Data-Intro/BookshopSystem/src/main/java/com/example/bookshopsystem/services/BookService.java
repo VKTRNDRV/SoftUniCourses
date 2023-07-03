@@ -22,4 +22,22 @@ public interface BookService {
     List<Book> getAllBooksBeforeYear(LocalDate date);
 
     List<Book> getAllByAuthorFirstNameAndAuthorLastNameOrderByReleaseDateDescTitleAsc(String firstName, String lastName);
+
+    List<Book> getAllBooksByAgeRestriction(String ageRestrictionString);
+
+    List<Book> getGoldenBooksWithUnder5000Copies();
+
+    List<Book> getBooksWithPriceLessThan5OrGreaterThan40();
+
+    List<Book> getBooksNotReleasedInYear(int year);
+
+    List<Book> getBooksReleasedBeforeDateFormatDd_MM_yyyy(String date);
+
+    List<Book> getBooksWithTitleContainingIgnoreCasing(String substring);
+
+    List<Book> getBooksWithAuthorsLastNameStartingWithIgnoreCasing(String beginning);
+
+    int findCountOfBooksWithTitleLongerThan(int maxLength);
+
+    Book findReducedBookById(long id);
 }

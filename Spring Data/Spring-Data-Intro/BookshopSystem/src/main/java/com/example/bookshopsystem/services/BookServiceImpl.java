@@ -1,12 +1,15 @@
 package com.example.bookshopsystem.services;
 
-import com.example.bookshopsystem.models.entities.Author;
 import com.example.bookshopsystem.models.entities.Book;
+import com.example.bookshopsystem.models.enums.AgeRestriction;
+import com.example.bookshopsystem.models.enums.EditionType;
 import com.example.bookshopsystem.repositories.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
@@ -67,8 +70,73 @@ public class BookServiceImpl implements BookService{
     }
 
     @Override
-    public List<Book> getAllByAuthorFirstNameAndAuthorLastNameOrderByReleaseDateDescTitleAsc(String firstName, String lastName) {
+    public List<Book> getAllByAuthorFirstNameAndAuthorLastNameOrderByReleaseDateDescTitleAsc
+            (String firstName, String lastName) {
         return null;
     }
+
+    @Override
+    public List<Book> getAllBooksByAgeRestriction(String ageRestrictionString) {
+        return this.bookRepository
+                .findAllBooksByAgeRestriction(
+                        AgeRestriction.valueOf(ageRestrictionString.toUpperCase()));
+    }
+
+    @Override
+    public List<Book> getGoldenBooksWithUnder5000Copies() {
+        return this.bookRepository
+                .findAllByCopiesLessThanAndEditionTypeIs
+                        (5000, EditionType.GOLD);
+    }
+
+    @Override
+    public List<Book> getBooksWithPriceLessThan5OrGreaterThan40() {
+        return this.bookRepository
+                .findAllByPriceLessThanOrPriceGreaterThan
+                (BigDecimal.valueOf(5), BigDecimal.valueOf(40));
+    }
+
+    @Override
+    public List<Book> getBooksNotReleasedInYear(int year) {
+        return this.bookRepository.findAllByYearNot(year);
+    }
+
+    @Override
+    public List<Book> getBooksReleasedBeforeDateFormatDd_MM_yyyy(String date) {
+        return this
+                .bookRepository
+                .findAllByReleaseDateBefore
+                        (LocalDate.parse(date, DateTimeFormatter.ofPattern("dd-MM-yyyy")))
+                .orElseThrow();
+    }
+
+    @Override
+    public List<Book> getBooksWithTitleContainingIgnoreCasing(String substring) {
+        substring = "%" + substring.toLowerCase() + "%";
+        return this
+                .bookRepository
+                .findAllByLowercaseTitleContainingRegex(substring);
+    }
+
+    @Override
+    public List<Book> getBooksWithAuthorsLastNameStartingWithIgnoreCasing(String beginning) {
+        beginning = beginning.toLowerCase() + "%";
+        return this
+                .bookRepository
+                .findAllByAuthorLastNameLowercaseStartingWith(beginning);
+    }
+
+    @Override
+    public int findCountOfBooksWithTitleLongerThan(int maxLength) {
+        return this
+                .bookRepository
+                .findCountOfBooksWithTitleLongerThan(maxLength);
+    }
+
+    @Override
+    public Book findReducedBookById(long id) {
+        return this.bookRepository.findReducedBookById(id);
+    }
+
 
 }

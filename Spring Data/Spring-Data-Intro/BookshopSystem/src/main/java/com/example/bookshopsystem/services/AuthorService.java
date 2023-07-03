@@ -1,6 +1,7 @@
 package com.example.bookshopsystem.services;
 
 import com.example.bookshopsystem.models.entities.Author;
+import com.example.bookshopsystem.models.entities.Book;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
@@ -19,4 +20,9 @@ public interface AuthorService {
 
     List<Author> getAllAuthorsOrederByBooksDesc();
 
+    List<Author> getAuthorsFirstNameEndsIn(String end);
+
+    List<Author> findAuthorByBooksContaining(Book book);
+
+    int getTotalBookCopiesByAuthor(Author author);
 }
