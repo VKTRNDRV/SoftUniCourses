@@ -17,8 +17,7 @@ public class Category extends BaseEntity{
     private String name;
 
     @ManyToMany(targetEntity = Product.class,
-            mappedBy = "categories",
-            fetch = FetchType.EAGER)
+            mappedBy = "categories")
     private Set<Product> products;
 
     public void addProduct(Product product){

@@ -25,4 +25,10 @@ public class User extends BaseEntity{
             joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
     inverseJoinColumns = @JoinColumn(name = "friend_id", referencedColumnName = "id"))
     private Set<User> friends;
+
+    @OneToMany(targetEntity = Product.class, mappedBy = "seller")
+    private Set<Product> sellingProducts;
+
+    @OneToMany(targetEntity = Product.class, mappedBy = "buyer")
+    private Set<Product> boughtProducts;
 }

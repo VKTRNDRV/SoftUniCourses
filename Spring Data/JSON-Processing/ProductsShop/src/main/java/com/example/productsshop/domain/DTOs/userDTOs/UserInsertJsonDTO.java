@@ -1,4 +1,4 @@
-package com.example.productsshop.domain.DTOs;
+package com.example.productsshop.domain.DTOs.userDTOs;
 
 import com.example.productsshop.domain.entities.User;
 import com.google.gson.Gson;

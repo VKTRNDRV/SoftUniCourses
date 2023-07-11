@@ -2,10 +2,10 @@ package com.example.productsshop.services;
 
 import com.example.productsshop.domain.entities.User;
 import com.example.productsshop.repositories.UserRepository;
-import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.Random;
 
@@ -43,5 +43,25 @@ public class UserServiceImpl implements UserService{
             extractedUser = getRandomUser();
         }
         return extractedUser;
+    }
+
+    @Override
+    public List<User> findUsersWithSoldProductsOrderedByLastNameFirstName(){
+        return this.userRepository.findUsersWithSoldProductsOrderedByLastNameFirstName();
+    }
+
+    @Override
+    public List<User> getUsersWithProductsSold(){
+        List<User> allUsers = this.userRepository.findAll();
+        for (int i = 0; i < allUsers.size(); i++) {
+            User user = this.userRepository.getUserWithSoldProducts(allUsers.get(i));
+            if(user != null && user.getSellingProducts().size() > 0){
+                allUsers.set(i, user);
+            }else {
+                allUsers.remove(i);
+                i--;
+            }
+        }
+        return allUsers;
     }
 }

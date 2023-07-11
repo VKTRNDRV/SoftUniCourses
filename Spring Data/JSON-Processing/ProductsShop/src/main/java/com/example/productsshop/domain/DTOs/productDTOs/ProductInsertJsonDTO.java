@@ -1,9 +1,6 @@
-package com.example.productsshop.domain.DTOs;
+package com.example.productsshop.domain.DTOs.productDTOs;
 
 import com.example.productsshop.domain.entities.Product;
-import com.example.productsshop.domain.entities.User;
-import com.example.productsshop.repositories.UserRepository;
-import com.example.productsshop.services.UserService;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.annotations.Expose;
@@ -13,10 +10,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.PropertyMap;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-
-import java.util.Random;
 
 @Getter
 @Setter

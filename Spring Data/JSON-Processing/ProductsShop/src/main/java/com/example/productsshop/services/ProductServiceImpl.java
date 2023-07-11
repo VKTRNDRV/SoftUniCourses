@@ -1,14 +1,12 @@
 package com.example.productsshop.services;
 
 import com.example.productsshop.domain.entities.Product;
+import com.example.productsshop.domain.entities.User;
 import com.example.productsshop.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 
 @Service
 public class ProductServiceImpl implements ProductService{
@@ -68,6 +66,16 @@ public class ProductServiceImpl implements ProductService{
     @Override
     public void save(Product product){
         this.productRepository.save(product);
+    }
+
+    @Override
+    public List<Product> getInPriceRangeNoBuyerSortedPriceAsc(double min, double max) {
+        return this.productRepository.findAllByPriceBetweenAndBuyerIsNullOrderByPrice(min, max);
+    }
+
+    @Override
+    public List<Product> getAllSoldProductsByUser(User user){
+        return this.productRepository.findAllBySellerAndBuyerIsNotNull(user);
     }
 
 }

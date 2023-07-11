@@ -1,7 +1,6 @@
-package com.example.productsshop.domain.DTOs;
+package com.example.productsshop.domain.DTOs.categoryDTOs;
 
 import com.example.productsshop.domain.entities.Category;
-import com.example.productsshop.domain.entities.Product;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.annotations.Expose;

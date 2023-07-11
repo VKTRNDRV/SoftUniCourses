@@ -1,8 +1,9 @@
 package com.example.productsshop;
 
-import com.example.productsshop.domain.DTOs.CategoryInsertJsonDTO;
-import com.example.productsshop.domain.DTOs.ProductInsertJsonDTO;
-import com.example.productsshop.domain.DTOs.UserInsertJsonDTO;
+import com.example.productsshop.domain.DTOs.categoryDTOs.CategoryProductCountsInfoDTO;
+import com.example.productsshop.domain.DTOs.productDTOs.ProductWithBuyerNamesDTO;
+import com.example.productsshop.domain.DTOs.userDTOs.UserWithSoldProductsDTO;
+import com.example.productsshop.domain.DTOs.userDTOs.UsersAndProductsDTO;
 import com.example.productsshop.domain.entities.Category;
 import com.example.productsshop.domain.entities.Product;
 import com.example.productsshop.domain.entities.User;
@@ -13,10 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-import java.util.Set;
+import java.util.*;
 
 @Component
 public class ConsoleRunner implements CommandLineRunner {
@@ -72,6 +70,56 @@ public class ConsoleRunner implements CommandLineRunner {
 //            this.categoryService.insert(category);
 //            products.forEach(product -> this.productService.save(product));
 //        }
+
+
+
+//        List<Product> products = this.productService.getInPriceRangeNoBuyerSortedPriceAsc(500, 1000);
+//        ProductInPriceRangeDTO[] dtos = new ProductInPriceRangeDTO[products.size()];
+//        for (int i = 0; i < products.size(); i++) {
+//            Product product = products.get(i);
+//            ProductInPriceRangeDTO dto = ProductInPriceRangeDTO.mapToDTO(product);
+//            dtos[i] = dto;
+//        }
+//        String json = ProductInPriceRangeDTO.toJSON(dtos);
+//        System.out.println(json);
+
+
+//        List<User> users = this.userService.findUsersWithSoldProductsOrderedByLastNameFirstName();
+//        List<UserWithSoldProductsDTO> dtos = new ArrayList<>();
+//        for(User user : users){
+//            List<Product> unsoldProducts = this.productService.getAllSoldProductsByUser(user);
+//            List<ProductWithBuyerNamesDTO> productDTOs = new ArrayList<>();
+//            for(Product product : unsoldProducts){
+//                ProductWithBuyerNamesDTO productDTO = ProductWithBuyerNamesDTO.mapToDTO(product);
+//                productDTOs.add(productDTO);
+//            }
+//            if(unsoldProducts.size() > 0) {
+//                UserWithSoldProductsDTO dto = UserWithSoldProductsDTO.mapToDTO(user, productDTOs);
+//                dtos.add(dto);
+//            }
+//        }
+//        UserWithSoldProductsDTO[] usersWithSoldProductsDTOS = dtos.toArray(new UserWithSoldProductsDTO[0]);
+//        String json = UserWithSoldProductsDTO.toJSON(usersWithSoldProductsDTOS);
+//        System.out.println(json);
+
+
+
+//        List<Category> sortedCategories = this.categoryService.getAllCategoriesWithProductsSorted();
+//        CategoryProductCountsInfoDTO[] dtos = new CategoryProductCountsInfoDTO[sortedCategories.size()];
+//        for (int i = 0; i < sortedCategories.size(); i++) {
+//            dtos[i] = CategoryProductCountsInfoDTO
+//                    .mapToDTO(sortedCategories.get(i));
+//        }
+//        String json = CategoryProductCountsInfoDTO.toJson(dtos);
+//
+
+
+
+//        List<User> usersWithSoldProducts = this.userService.getUsersWithProductsSold();;
+//        User[] users = usersWithSoldProducts.toArray(new User[0]);
+//        UsersAndProductsDTO dto = UsersAndProductsDTO.create(users);
+//        String json = dto.toJson();
+//        System.out.println(json);
     }
 
     public static final String USERS_INSERT = """
