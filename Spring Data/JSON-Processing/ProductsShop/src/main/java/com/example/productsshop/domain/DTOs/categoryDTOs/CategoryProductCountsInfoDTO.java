@@ -1,11 +1,16 @@
 package com.example.productsshop.domain.DTOs.categoryDTOs;
 
 import com.example.productsshop.domain.DTOs.productDTOs.ProductInPriceRangeDTO;
+import com.example.productsshop.domain.DTOs.productDTOs.ProductWithBuyerNamesDTO;
 import com.example.productsshop.domain.entities.Category;
 import com.example.productsshop.domain.entities.Product;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.annotations.Expose;
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBException;
+import jakarta.xml.bind.Marshaller;
+import jakarta.xml.bind.annotation.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.modelmapper.ModelMapper;
@@ -16,17 +21,39 @@ import java.util.Set;
 
 @Getter
 @Setter
+@XmlRootElement(name = "category")
+@XmlAccessorType(XmlAccessType.NONE)
 public class CategoryProductCountsInfoDTO {
     @Expose
+    @XmlAttribute(name = "name")
     private String category;
+
     @Expose
+    @XmlElement(name = "products-count")
     private int productsCount;
+
     @Expose
+    @XmlElement(name = "average-price")
     private String avgPrice;
+
     @Expose
+    @XmlElement(name = "total-revenue")
     private String totalRevenue;
 
     private Set<Product> products;
+
+
+
+    private static Marshaller marshaller;
+
+    static {
+        try {
+            marshaller = JAXBContext.newInstance(CategoryProductCountsInfoDTO.class).createMarshaller();
+            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+        } catch (JAXBException e) {
+            e.printStackTrace();
+        }
+    }
 
     private static final Gson gson = new GsonBuilder()
             .excludeFieldsWithoutExposeAnnotation()

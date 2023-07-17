@@ -1,6 +1,10 @@
 package com.example.productsshop;
 
+import com.example.productsshop.domain.DTOs.XMLDTOs.CategoriesProductsCountWrapperDTO;
+import com.example.productsshop.domain.DTOs.XMLDTOs.ProductsInPriceRangeXMLDTO;
+import com.example.productsshop.domain.DTOs.XMLDTOs.UsersWithSoldProductsXMLDTO;
 import com.example.productsshop.domain.DTOs.categoryDTOs.CategoryProductCountsInfoDTO;
+import com.example.productsshop.domain.DTOs.productDTOs.ProductInPriceRangeDTO;
 import com.example.productsshop.domain.DTOs.productDTOs.ProductWithBuyerNamesDTO;
 import com.example.productsshop.domain.DTOs.userDTOs.UserWithSoldProductsDTO;
 import com.example.productsshop.domain.DTOs.userDTOs.UsersAndProductsDTO;
@@ -14,6 +18,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.Marshaller;
 import java.util.*;
 
 @Component
@@ -81,7 +87,11 @@ public class ConsoleRunner implements CommandLineRunner {
 //            dtos[i] = dto;
 //        }
 //        String json = ProductInPriceRangeDTO.toJSON(dtos);
+//        String xml = new ProductsInPriceRangeXMLDTO(
+//                Arrays.stream(dtos).toList())
+//                .toXML();
 //        System.out.println(json);
+//        System.out.println(xml);
 
 
 //        List<User> users = this.userService.findUsersWithSoldProductsOrderedByLastNameFirstName();
@@ -100,7 +110,9 @@ public class ConsoleRunner implements CommandLineRunner {
 //        }
 //        UserWithSoldProductsDTO[] usersWithSoldProductsDTOS = dtos.toArray(new UserWithSoldProductsDTO[0]);
 //        String json = UserWithSoldProductsDTO.toJSON(usersWithSoldProductsDTOS);
+//        String xml = new UsersWithSoldProductsXMLDTO(dtos).toXML();
 //        System.out.println(json);
+//        System.out.println(xml);
 
 
 
@@ -111,7 +123,13 @@ public class ConsoleRunner implements CommandLineRunner {
 //                    .mapToDTO(sortedCategories.get(i));
 //        }
 //        String json = CategoryProductCountsInfoDTO.toJson(dtos);
-//
+//        String xml = new CategoriesProductsCountWrapperDTO(Arrays
+//                .stream(dtos)
+//                .toList())
+//                .toXML();
+//        System.out.println(json);
+//        System.out.println(xml);
+
 
 
 
@@ -119,7 +137,10 @@ public class ConsoleRunner implements CommandLineRunner {
 //        User[] users = usersWithSoldProducts.toArray(new User[0]);
 //        UsersAndProductsDTO dto = UsersAndProductsDTO.create(users);
 //        String json = dto.toJson();
+//        String xml = dto.toXML();
 //        System.out.println(json);
+//        System.out.println(xml);
+
     }
 
     public static final String USERS_INSERT = """

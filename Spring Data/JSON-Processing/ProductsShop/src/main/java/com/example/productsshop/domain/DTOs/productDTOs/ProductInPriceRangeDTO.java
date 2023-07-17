@@ -9,14 +9,31 @@ import lombok.Setter;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.PropertyMap;
 
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBException;
+import jakarta.xml.bind.Marshaller;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlAttribute;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
+import java.io.StringWriter;
+
 @Getter
 @Setter
-public class ProductInPriceRangeDTO {
+@XmlRootElement(name = "product")
+@XmlAccessorType(XmlAccessType.NONE)
+public class ProductInPriceRangeDTO implements Serializable {
     @Expose
+    @XmlAttribute(name = "name")
     private String name;
+
     @Expose
+    @XmlAttribute(name = "price")
     private double price;
+
     @Expose
+    @XmlAttribute(name = "seller")
     private String seller;
 
     private String sellerFirstName;
@@ -27,6 +44,17 @@ public class ProductInPriceRangeDTO {
             .setPrettyPrinting()
             .serializeNulls()
             .create();
+
+    private static Marshaller marshaller;
+
+    static {
+        try {
+            marshaller = JAXBContext.newInstance(ProductInPriceRangeDTO.class).createMarshaller();
+            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+        } catch (JAXBException e) {
+            e.printStackTrace();
+        }
+    }
 
     private static final ModelMapper modelMapper = new ModelMapper();
 
@@ -57,6 +85,18 @@ public class ProductInPriceRangeDTO {
 
     public static String toJSON(ProductInPriceRangeDTO[] dtos){
         return gson.toJson(dtos);
+    }
+
+    public String toXML(){
+        String output = "";
+        try {
+            StringWriter stringWriter = new StringWriter();
+            marshaller.marshal(this, stringWriter);
+            output = stringWriter.toString();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return output;
     }
 
     public String toJSON(){

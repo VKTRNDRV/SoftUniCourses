@@ -4,6 +4,10 @@ import com.example.productsshop.domain.DTOs.productDTOs.SoldProductsDTO;
 import com.example.productsshop.domain.entities.Product;
 import com.example.productsshop.domain.entities.User;
 import com.google.gson.annotations.Expose;
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBException;
+import jakarta.xml.bind.Marshaller;
+import jakarta.xml.bind.annotation.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.modelmapper.ModelMapper;
@@ -14,15 +18,38 @@ import java.util.Set;
 
 @Getter
 @Setter
+@XmlRootElement(name = "user")
+@XmlAccessorType(XmlAccessType.NONE)
 public class UserInfoAndSoldProductsDTO {
+
     @Expose
+    @XmlAttribute(name = "first-name")
     private String firstName;
+
     @Expose
+    @XmlAttribute(name = "last-name")
     private String lastName;
+
     @Expose
+    @XmlAttribute(name = "age")
     private int age;
+
     @Expose
+    @XmlElement(name = "sold-products")
     private SoldProductsDTO soldProducts;
+
+
+
+    private static Marshaller marshaller;
+
+    static {
+        try {
+            marshaller = JAXBContext.newInstance(UserInfoAndSoldProductsDTO.class).createMarshaller();
+            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+        } catch (JAXBException e) {
+            e.printStackTrace();
+        }
+    }
 
     private static final ModelMapper modelMapper = new ModelMapper();
 
