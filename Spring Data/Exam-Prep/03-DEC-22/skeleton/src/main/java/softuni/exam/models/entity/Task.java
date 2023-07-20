@@ -2,6 +2,7 @@ package softuni.exam.models.entity;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.sql.Date;
 import java.time.LocalDateTime;
 
 @Entity
@@ -10,7 +11,7 @@ public class Task extends BaseEntity{
     @Column(nullable = false)
     private BigDecimal price;
 
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "")
     private LocalDateTime date;
 
     @ManyToOne
