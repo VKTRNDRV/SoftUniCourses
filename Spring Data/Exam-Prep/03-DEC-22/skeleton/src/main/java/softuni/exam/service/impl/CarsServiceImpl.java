@@ -49,7 +49,7 @@ public class CarsServiceImpl implements CarsService {
     }
 
     @Override
-    public String importCars() throws IOException, JAXBException {
+    public String importCars() throws IOException{
         StringBuilder output = new StringBuilder();
         List<CarInsertDTO> carInsertDTOs = new ArrayList<>();
         try {

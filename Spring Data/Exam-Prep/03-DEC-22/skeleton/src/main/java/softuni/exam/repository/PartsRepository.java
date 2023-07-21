@@ -12,4 +12,6 @@ public interface PartsRepository extends JpaRepository<Part, Integer> {
 
 
     Optional<Part> findFirstByPartName(String partName);
+
+    Optional<Part> findFirstById(Long id);
 }

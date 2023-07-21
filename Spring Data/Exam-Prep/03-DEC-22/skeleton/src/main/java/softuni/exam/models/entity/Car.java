@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Car extends BaseEntity{
 
     @Column(name = "car_type",
-            nullable = false)
+            nullable = false, columnDefinition = "VARCHAR(255)")
     @Enumerated(EnumType.STRING)
     private CarType carType;
 
@@ -28,7 +28,7 @@ public class Car extends BaseEntity{
     private String plateNumber;
 
     @Column(nullable = false)
-    private int kilometers;
+    private Integer kilometers;
 
     @Column(nullable = false)
     private Double engine;
@@ -75,7 +75,7 @@ public class Car extends BaseEntity{
         this.plateNumber = plateNumber;
     }
 
-    public int getKilometers() {
+    public Integer getKilometers() {
         return kilometers;
     }
 
