@@ -1,0 +1,10 @@
+package bank.entities.client;
+
+public class Student extends BaseClient{
+    public Student(String name, String ID, double income) {
+        super(name, ID, 2, income);
+        setInterestIncrease(1);
+    }
+
+    // can only live in BranchBank
+}
