@@ -1,0 +1,24 @@
+#general {
+    margin: 0px;
+    padding: 0px;
+    background-color: #CCCCCC;
+    margin-left: 20px;
+}
+
+#general p {
+    font-size: 24px;
+}
+
+
+#entry {
+    list-style: none;
+}
+
+#entry h1{
+    font-size: 28px;
+}
+
+#entry p {
+    font-size: initial;
+    font-style: italic;
+}
