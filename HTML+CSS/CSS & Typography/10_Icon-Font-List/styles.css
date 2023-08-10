@@ -1,1 +1,45 @@
-/* TODO: style the html */
+@import url(https://use.fontawesome.com/releases/v6.4.2/css/all.css);
+
+body{
+    font-family: Verdana, Geneva, sans-serif;
+    line-height: 1.5;
+    font-size: 18px;
+}
+
+ul{
+    list-style-type: none;
+}
+
+ul.check i{
+    color: #2fcc71;
+    font-size: 25px;
+}
+
+ul.star i{
+    color: coral;
+    font-size: 25px;
+}
+
+ul.contact i{
+    color: #3498da;
+    font-size: 25px;
+}
+
+/* <body>:
+o Font: Verdana, Geneva, Tahoma
+o Generic Font: sans-serif
+o Height of the line: 1.5
+o Font size: 18px */
+
+
+/* <ul>:
+o Set the list style type to none
+• The icons in the <ul class="check"> (you can select them like that: ul.check i)
+o Color: #2fcc71
+o Font size: 25px
+• The icons in the <ul class="star"> (you can select them like that: ul.star i)
+o Color: coral
+o Font size: 25px
+• The icons in the <ul class="contact"> (you can select them like that: ul.contact i)
+o Color: #3498da
+o Font size: 25px */
