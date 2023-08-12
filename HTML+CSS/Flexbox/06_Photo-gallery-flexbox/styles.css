@@ -1,0 +1,27 @@
+html{
+    background-color: #ddddc9;
+}
+
+body, ul, li{
+    display: flex;
+}
+
+ul{
+    list-style: none;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+li{
+    border: 5px solid black;
+    margin: 0.5em;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: inset;
+}
+
+img{
+    width: fit-content;
+    height: fit-content;
+    margin: 0.5em;
+}

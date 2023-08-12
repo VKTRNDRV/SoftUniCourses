@@ -1,0 +1,16 @@
+body{
+    background-color: rgb(238, 238, 238);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40em;
+    font-family: sans-serif;
+}
+
+div.card{
+    background-color: rgb(255, 255, 255);
+    width: 25em;
+    border-radius: 7px;
+    align-self: center;
+    padding: 0.5em;
+}
