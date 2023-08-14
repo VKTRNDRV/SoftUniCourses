@@ -1,0 +1,31 @@
+@import url(https://use.fontawesome.com/releases/v6.4.2/css/all.css);
+
+ul{
+    list-style: none;
+    display: inline-block;
+    font-size: 30px;
+    padding: 0; /* Remove default padding from the list */
+    margin: 0;
+}
+
+li{
+    display: inline-block;
+    margin: 0; /* Remove default margin from the list items */
+}
+
+a{
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    padding: 0.5em;
+    background-color: #eee;
+    width: 1em;
+    height: 1em;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+a:hover{
+    background-color: #aaa;
+}

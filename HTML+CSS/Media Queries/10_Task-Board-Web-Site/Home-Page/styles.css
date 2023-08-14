@@ -1,0 +1,201 @@
+
+
+
+/* TODO	create a valid CSS Grid  */
+/* TODO make the layout responsive by using media queries */
+
+body{
+  display: grid;
+  grid-template-columns: 120px auto;
+  grid-template-areas: 
+    "header header"
+    "aside main"
+    "footer footer";
+  gap: 10px;
+}
+
+body header{
+  display: grid;
+  grid-area: header;
+  grid-template-columns: 60px auto;
+  grid-template-areas: "logo header-text";
+}
+
+body header a{
+  grid-area: logo;
+}
+
+body header h1{
+  grid-area: header-text;
+}
+
+body aside{
+  grid-area: aside;
+}
+
+body main{
+  grid-area: main;
+}
+
+body footer{
+  grid-area: footer;
+}
+
+
+@media (max-width: 550px) {
+  body {
+    display: grid;
+    grid-template-areas:
+      "header header"
+      "aside aside"
+      "main main"
+      "footer footer";
+  }
+}
+
+
+  /* ----------- Styles ----------- */
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    display: grid;
+  }
+
+
+
+
+
+  
+  body header {
+    background: rgb(181, 216, 255);
+    padding: 0px 3px 4px 3px;
+    border-radius: 3px;
+  }
+  
+  body header a {
+    align-self: center;
+    text-align: center;
+    font-size: 3.2em;
+    text-decoration: none;
+  }
+  
+  body header h1 {
+    margin: 0px;
+    align-self: center;
+    font-size: 1.5em;
+    padding-top: 8px;
+  }
+
+
+
+
+
+  
+  aside {
+    background: rgb(181, 216, 255);
+    border-radius: 3px;
+  }
+  
+  aside ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 10px;
+  }
+  
+  aside ul a {
+    display: block;
+    padding: 5px;
+    color: rgb(86, 40, 129);
+    text-decoration: none;
+  }
+
+
+
+
+
+  
+  main h1 {
+    font-size: 1.5em;
+  }
+
+  main form table td, th{
+    height: 50px;
+    border: 1px solid gray;
+  } 
+
+  main form table tbody tr{
+    height: 50px;
+  } 
+
+  main form table tbody tr th{
+    background-color: rgb(81, 118, 199);
+    color: white;
+    min-height: 100px;
+    padding: 1em;
+  }
+
+  .title td{
+    background-color: rgb(181, 216, 255);
+  }
+
+  .title input{
+    width: 95%;
+  }
+
+  .board select{
+    width: 100%;
+  }
+  
+  main form button{
+    width: 100%;
+    padding: 1em;
+    border-radius: 10px;
+    background-color: rgb(127, 225, 255);
+    cursor: pointer;
+  }
+  
+
+
+
+  
+  footer {
+    background: rgb(181, 216, 255);
+    padding: 8px;
+    border-radius: 3px; 
+  }
+  
+  /* main section {
+    background: rgb(171, 208, 243);
+    padding: 15px;
+    border-radius: 5px;
+  }
+  
+  main div a {
+    color: rgb(86, 40, 129);
+    background: rgb(171, 208, 243);
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(125, 170, 238);
+    margin: 10px 10px 0px 0px; 
+    text-align: center;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    vertical-align:middle;
+  }
+  
+  main div a span {
+    display: block;
+    font-size: 3em;
+
+  } */
+  
+
+
+  
+
+  
+ 
+  
+
+  

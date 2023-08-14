@@ -1,0 +1,107 @@
+body{
+    padding: 5px 10px;
+    display: grid;
+    grid-template-areas:
+    "header header"
+    "aside main"
+    "footer footer";
+    grid-template-columns: 100px auto;
+    gap: 10px;
+}
+
+header, main, aside, footer{
+    background-color: rgb(181, 216, 255);
+    border-radius: 5px;
+    padding-left: 1em;
+}
+
+header{
+    grid-area: header;
+}
+
+aside{
+    grid-area: aside;
+}
+
+main{
+    grid-area: main;
+}
+
+footer{
+    grid-area: footer;
+}
+
+header > h1{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+header > nav{
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 8px;
+}
+
+header > nav > ul{
+    list-style: none;
+}
+
+header > nav > ul > li {
+    display: inline;
+}
+
+header > nav > ul > li > a{
+    text-decoration: none;
+    color: rgb(53, 100, 153);
+    padding: 5px 15px;
+}
+
+aside > ul{
+    list-style: none;
+    margin: 0px;
+    padding: 5px;
+    padding-top: 0.5em;
+}
+
+aside a{
+    display: block;
+    padding: 5px 0px;
+    color: rgb(86, 40, 129);
+    text-decoration: none;
+    border-radius: 4px;
+    padding-left: 4px;
+}
+
+aside a:hover{
+    background-color: rgb(195, 221, 255);
+}
+
+footer{
+    padding: 0.5em;
+}
+
+@media (max-width: 700px){
+    body{
+        display: grid;
+        grid-template-areas: 
+        "header header"
+        "aside aside"
+        "main main"
+        "footer footer";
+    }
+
+    header > h1{
+        display: block;
+    }
+
+    header > nav{
+        display: block;
+        text-align: center;
+    }
+
+    nav a{
+        display: block;
+        padding-left: 5px;
+        align-self: center;
+    }
+}

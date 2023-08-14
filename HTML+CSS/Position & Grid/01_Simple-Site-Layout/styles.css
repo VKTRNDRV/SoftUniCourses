@@ -1,0 +1,98 @@
+body{
+    padding: 5px 10px;
+    display: grid;
+    grid-template-areas:
+    "header header"
+    "aside main"
+    "footer footer";
+    grid-template-columns: 100px auto;
+    gap: 10px;
+}
+
+header, main, aside, footer{
+    background-color: rgb(181, 216, 255);
+    border-radius: 5px;
+    padding-left: 1em;
+}
+
+header{
+    grid-area: header;
+}
+
+aside{
+    grid-area: aside;
+}
+
+main{
+    grid-area: main;
+}
+
+footer{
+    grid-area: footer;
+}
+
+header > h1{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+aside > ul{
+    list-style: none;
+    margin: 0px;
+    padding: 5px;
+    padding-top: 0.5em;
+}
+
+a{
+    display: block;
+    padding: 5px 0px;
+    color: rgb(86, 40, 129);
+    text-decoration: none;
+    border-radius: 4px;
+    padding-left: 4px;
+}
+
+a:hover{
+    background-color: rgb(195, 221, 255);
+}
+
+/*
+CSS Grid
+In the styles.css:
+• Make the body grid container by displaying the grid.
+• Define two grid columns and their size. 100px for the first column and 
+    auto for the second.
+• Define the grid areas: header, main, aside, footer.
+• Reference the grid areas: "header header", "aside main", "footer footer".
+• Set gap: 10px.
+
+<body> that contains: header, aside, main, footer all with:
+o border-radius: 3px;
+o background: rgb(181, 216, 255);
+o padding: 5px 10px;
+
+The elements into the body:
+• <header> with
+o <h1> text that is displayed as inline block and is 
+    vertically aligned in the middle;
+
+• <aside> tag that contains:
+o <ul> tag for unordered list
+▪ list-style-type: none;
+▪ margin: 0px;
+▪ padding: 5px;
+▪ <li> tag for list item
+
+• <a> tag for hyperlink
+o display: block;
+o padding: 5px 0px;
+o color: rgb(86, 40, 129);
+o text-decoration: none;
+• <main> tag that contain:
+o <h1> text title for the tasks
+o <ul> tag with:
+▪ <li> for the tasks with their status
+• <footer> tag that contain:
+o <div> with copyright sign and text
+
+*/
