@@ -1,16 +1,16 @@
-package com.example.mobilelele.services;
+package com.example.mobilelele.services.model;
 
 import com.example.mobilelele.repositories.ModelRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ModelService {
+public class ModelServiceImpl implements ModelService{
 
     private ModelRepository modelRepository;
 
     @Autowired
-    public ModelService(ModelRepository modelRepository){
+    public ModelServiceImpl(ModelRepository modelRepository){
         this.modelRepository = modelRepository;
     }
 }
