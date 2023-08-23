@@ -14,9 +14,9 @@ public class UserRegisterFormDto {
     @Size(min = 5, max = 20)
     private String password;
 
-    @NotNull
-    @Size(min = 5, max = 20)
-    private String confirmPassword;
+//    @NotNull
+//    @Size(min = 5, max = 20)
+//    private String confirmPassword;
 
     @NotNull
     @Size(min = 5, max = 20)
@@ -45,13 +45,13 @@ public class UserRegisterFormDto {
         this.password = password;
     }
 
-    public String getConfirmPassword() {
-        return confirmPassword;
-    }
-
-    public void setConfirmPassword(String confirmPassword) {
-        this.confirmPassword = confirmPassword;
-    }
+//    public String getConfirmPassword() {
+//        return confirmPassword;
+//    }
+//
+//    public void setConfirmPassword(String confirmPassword) {
+//        this.confirmPassword = confirmPassword;
+//    }
 
     public String getFirstName() {
         return firstName;
