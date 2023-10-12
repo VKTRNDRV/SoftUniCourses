@@ -1,0 +1,42 @@
+/* *{
+    box-sizing: border-box;
+} */
+
+.container{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+.week, .notes{
+    display: flex;
+    flex-direction: column;
+}
+
+.week{
+    width: 70%;
+}
+
+.notes{
+    width: 30%;
+}
+
+.heading{
+    flex-grow: 1;
+}
+
+.days{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+}
+
+.day, .note{
+    flex-grow: 1;
+}
+
+span{
+    border: solid 1px black;
+    text-align: center;
+    padding: 3rem;
+}

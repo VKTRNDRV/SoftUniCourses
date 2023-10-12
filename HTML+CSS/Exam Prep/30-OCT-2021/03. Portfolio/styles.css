@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@200&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
+@import url(https://use.fontawesome.com/releases/v6.4.2/css/all.css);
+
+
+body{
+    font-family: 'Raleway', sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 45px;
+}
+
+section{
+    background-color: rgb(239, 239, 239);
+    height: 700px;
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+
+h2{
+    font-size: 3.3em;
+    font-weight: 100;
+}
+
+h2 strong{
+    font-weight: 900;
+}
+
+p{
+    font-size: 1.2em;
+    font-weight: 400;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+.vertical-line{
+    border-left: 1px solid black;
+    height: 100px;
+    width: 100px;
+}
+
+.horizonal-line{
+    border-top: 1px solid black;
+    height: 1px;
+    width: 100px;
+}
+
+
+
+
+
+.jade-template{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.jade-template .text{
+    max-width: 550px;
+    margin: 100px 0px 0px 120px;
+}
+
+.jade-template .menu{
+    margin: 50px 50px 0px 0px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+
+
+
+.name-is-apollo{
+    padding: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.name-is-apollo .img-container{
+    margin: 0px 0px 0px 100px;
+}
+
+.name-is-apollo .text{
+    max-width: 700px;
+    margin: 0px 150px 0px 0px;
+}
+
+.name-is-apollo .text .heading{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+}
+
+.icons{
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    gap: 30px;
+    list-style: none;
+    padding: 0px;
+}
+
+.icons li{
+    background-color: rgb(144, 144, 144);
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icons li a{
+    color: white;
+    font-size: 1.2em;
+}
+
+
+
+
+
+.snapping-photo{
+    overflow: hidden;
+    height: 800px;
+}
+
+.snapping-photo img{
+    position: relative;
+    top: -50px;
+    width: 100%;
+    height: auto;
+}
+
+
+
+
+.ut-enim{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 120px;
+}
+
+.ut-enim .text{
+    max-width: 500px;
+    margin-top: 50px;
+}
+
+.ut-enim img{
+    width: 850px;
+    height: fit-content;
+}
+
+
+
+
+.gallery{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery :nth-child(1){
+    position: relative;
+    left: 170px;
+    max-height: 350px;
+    width: auto;   
+}
+
+.gallery :nth-child(2){
+    max-height: 500px;
+    width: auto;
+    z-index: 1;
+}
+
+.gallery :nth-child(3){
+    position: relative;
+    right: 170px;
+    max-height: 350px;
+    width: auto;   
+}
+
+
+
+
+.say-hello{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 300px 0px 300px;
+}
+
+.say-hello h2{
+    margin-bottom: 20px;
+}
+
+.say-hello p{
+    text-align: center;
+}
+
+.say-hello .message{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+    width: 800px;
+}
+
+.say-hello .message a{
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    font-size: 1.5em;
+    font-weight: 900;
+    text-align: center;
+    padding: 10px 0px;
+}
+
+.say-hello .message input,
+.say-hello .message textarea{
+    background-color: rgb(239, 239, 239);
+    border: solid black 1px;
+    color: black;
+    padding: 15px;
+    margin-bottom: 40px;
+}
+
+.say-hello .message input{
+    width: 330px;
+}
+
+.say-hello .message input::placeholder,
+.say-hello .message textarea::placeholder{
+    color: black;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5em;
+}
+
+.email-subject{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.say-hello span{
+    margin-bottom: 20px;
+}

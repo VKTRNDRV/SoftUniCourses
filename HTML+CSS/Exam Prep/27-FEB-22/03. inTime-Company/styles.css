@@ -1,0 +1,316 @@
+@import url(https://use.fontawesome.com/releases/v6.4.2/css/all.css);
+
+body{
+    font-family: Helvetica, sans-serif;
+    margin: 0px;
+}
+
+.horizontal-line{
+    height: 5px;
+    width: 10px;
+    background-color: rgb(52, 177, 196);
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 130px;
+}
+
+header h1{
+    color: rgb(69, 69, 69);
+    font-size: 40px;
+    font-weight: 500;
+    margin-left: 10%;
+}
+
+header h1 span{
+    color: rgb(52, 177, 196);
+}
+
+header .menu{
+    margin-right: 15%;
+    width: 45%;
+}
+
+header .menu ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style: none;
+}
+
+header .menu ul li .horizontal-line{
+    width: 75px;
+    position: relative;
+    top: 5px;
+}
+
+header .menu ul li a{
+    text-decoration: none;
+    color: rgb(69, 69, 69);
+    font-size: 24px;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main .get-started{
+    width: 100%;
+    height: 800px;
+    background-image: url(images/slide2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+main .get-started .banner{
+    background-color: rgba(1, 1, 1, 0.44);
+    width: 700px;
+    height: 220px;
+    padding: 25px;
+    margin: 300px 0px 0px 250px;
+}
+
+main .get-started .banner h3{
+    font-size: 3.7em;
+    font-weight: 100;
+    margin: 0px 0px 30px 0px;
+}
+
+main .get-started .banner a{
+    color: white;
+    text-decoration: none;
+    font-size: 2em;
+    padding: 0.4em 1.5em;
+    background-color: rgb(0, 140, 186);
+    border-radius: 1em;
+}
+
+main .welcome{
+    color: rgb(69, 69, 69);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1444px;
+    height: 411px;
+}
+
+main .welcome h2{
+    font-size: 2.5em;
+    font-weight: 100;
+    margin-bottom: 10px;
+}
+
+main .welcome .horizontal-line{
+    width: 150px;
+}
+
+main .welcome p{
+    text-align: center;
+    font-size: 1.4em;
+    line-height: 1.4;
+    margin-bottom: 40px;
+}
+
+main .welcome a{
+    color: white;
+    font-size: 1.4em;
+    text-decoration: none;
+    background-color: rgb(69, 69, 69);
+    padding: 0.88em 1.7em;
+    border-radius: 2em;
+}
+
+main .our-services{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 800px;
+    background-color: rgb(238, 240, 241);
+}
+
+main .our-services .cards-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+main .our-services h2{
+    color: rgb(69, 69, 69);
+    font-size: 2.5em;
+    font-weight: 100;
+    margin-bottom: 10px;
+}
+
+main .our-services .horizontal-line{
+    background-color: rgb(69, 69, 69);
+    width: 150px;
+    margin-bottom: 50px;
+}
+
+main .our-services .cards-container .card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 0.5em;
+    background-color: white;
+    width: 450px;
+    height: 600px;
+    color: rgb(80, 80, 80);
+}
+
+main .our-services .cards-container .card img{
+    width: 100%;
+    height: auto;
+}
+
+main .our-services .cards-container .card h4{
+    font-size: 1.8em;
+    margin: 35px 0px 0px 0px;
+    font-weight: 100;
+}
+
+main .our-services .cards-container .card p{
+    text-align: center;
+    font-size: 1.3em;
+    padding: 0px 30px;
+}
+
+main .our-services .cards-container .card a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.4em;
+    background-color: rgb(69, 69, 69);
+    padding: 0.5em 1em;
+    border-radius: 7px;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+}
+
+footer .subscribe{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(57, 63, 67);
+}
+
+footer .subscribe h2{
+    color: white;
+    font-size: 2.5em;
+    font-weight: 100;
+    margin: 50px 0px 10px 0px;
+}
+
+footer .subscribe .horizontal-line{
+    background-color: white;
+    width: 150px;
+    height: 3px;
+}
+
+footer .subscribe p{
+    color: white;
+    font-size: 1.3em;
+    margin-bottom: 50px;
+}
+
+footer .subscribe .enter-email input{
+    background-color: rgb(84, 90, 94);
+    border-radius: 7px;
+    border: none;
+    height: 60px;
+    width: 600px;
+    margin-right: 10px;
+    margin-bottom: 80px;
+}
+
+footer .subscribe .enter-email input::placeholder{
+    font-style: italic;
+    padding-left: 20px;
+    font-size: 1.5em;
+}
+
+footer .subscribe .enter-email a{
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    padding: 0.7em 2em;
+    border-radius: 8px;
+    background-color: rgb(107, 191, 255);
+}
+
+footer .links{
+    background-color: rgb(47, 53, 57);
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-around;
+    padding: 60px;
+}
+
+footer .links div h5{
+    font-size: 1.7em;
+    font-weight: 100;
+    margin: 0px 0px 20px 0px;
+}
+
+footer .links div ul{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+footer .links div ul li,
+footer .links div p{
+    margin: 20px 0px;
+}
+
+footer .links div ul li a,
+footer .links div p{
+    text-decoration: none;
+    color: white;
+    font-weight: 100;
+    font-size: 1.3em;
+}
+
+footer .links div .address{
+    margin-bottom: 50px;
+}
+
+footer .links .follow-us{
+    margin-right: 100px;
+}
+
+footer .links .follow-us .icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+footer .copyright{
+    background-color: rgb(38, 43, 47);
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+footer .copyright p{
+    font-size: 1.1em;
+}
+
+footer .copyright p span{
+    color: rgb(59, 139, 170);
+}

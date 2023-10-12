@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+body{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: 'PT Serif', serif;
+}
+
+.card{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 870px;
+    height: 400px;
+    padding: 20px;
+    box-shadow: 1px 1px 20px gray;
+    background-image: url(image/image1.png);
+    background-repeat: repeat-y;
+}
+
+.card .info{
+    width: 400px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card .info h1{
+    text-align: center;
+    margin: 0px;
+}
+
+.card .info .subheadings{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-top: dotted black 1px;
+    padding-top: 7px;
+    margin-bottom: 40px;
+}
+
+.card .info .subheadings h4{
+    margin: 0px;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.card .info .ingredients{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.card .info .ingredients li{
+    margin-bottom: 4px;
+}
+
+.card .info .ingredients .qty{
+    color: green;
+    font-weight: 700;
+    margin-right: 5px;
+}
+
+.card .info p{
+    line-height: 1.5;
+    margin-bottom: 55px;
+}
+
+.card .info table{
+    border-collapse: collapse;
+}
+
+.card .info table th,
+.card .info table td{
+    border: 1px solid green;
+    text-align: center;
+}
+
+.card img{
+    height: 100%;
+    width: auto;
+}
+
