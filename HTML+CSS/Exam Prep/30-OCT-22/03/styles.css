@@ -1,0 +1,202 @@
+@import url(https://use.fontawesome.com/releases/v6.4.2/css/all.css);
+@import url(https://fonts.googleapis.com/css?family=PT+Sans|PT+Serif);
+
+body{
+    margin: 0px;
+    font-family: 'PT Sans', sans-serif;
+}
+
+header{
+    color: white;
+}
+
+header .header-top{
+    background-color: rgb(208, 25, 25);
+    height: 66px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.2em;
+    padding: 0px 40px;
+}
+
+.socials{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.socials li{
+    margin: 5px;
+}
+
+header .no-pain{
+    height: 600px;
+    background-image: url(image/fitness-main.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav{
+    margin: 0px 0px;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+    align-self: flex-end;
+    margin: 30px 40px;
+}
+
+.nav li a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.3em;
+    font-weight: 100;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 140px;
+}
+
+.info h1{
+    font-size: 4em;
+    letter-spacing: 10px;
+    margin-bottom: 10px;
+}
+
+.info p{
+    font-size: 1.2em;
+    text-align: center;
+    width: 73%;
+    margin-bottom: 40px;
+}
+
+.info a{
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: white;
+    background-color: rgb(208, 25, 25);
+    font-weight: 700;
+    padding: 0.5em 1.7em;
+    border-radius: 5px;
+}
+
+.welcome{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.welcome .cards-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 250px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.welcome .cards-container .card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 350px;
+}
+
+.card h5{
+    color: rgb(208, 25, 25);
+    font-size: 1.2em;
+    margin: 20px 0px;
+}
+
+.card p{
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 0px;
+}
+
+.welcome .cards-container .card img{
+    height: 75px;
+}
+
+h3{
+    font-size: 2.5em;
+}
+
+.horizontal-line{
+    background-color: rgb(208, 25, 25);
+    height: 3px;
+    width: 66px;
+}
+
+.coaches{
+    background-color: rgb(239, 239, 239);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.coaches .coaches-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 250px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.coaches-container .coach-card{
+    width: 400px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.coach-card img{
+    width: 100%;
+    border-radius: 7px;
+}
+
+.coach-card h5{
+    font-size: 1.2em;
+    margin: 10px;
+}
+
+.coach-card h6{
+    color: rgb(208, 25, 25);
+    font-size: 1em;
+    margin: 5px;
+}
+
+.coach-card p{
+    color: rgb(156, 156, 156);
+    width: 80%;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+footer{
+    background-color: rgb(208, 25, 25);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+footer p{
+    margin: 0px;
+    font-size: 1.2em;
+    padding: 10px 0px;
+}

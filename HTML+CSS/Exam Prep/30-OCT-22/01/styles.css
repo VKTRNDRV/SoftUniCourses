@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Open Sans', sans-serif;
+}
+
+main{
+    width: 1350px;
+    height: 666px;
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+    border: 1px solid gray;
+    border-radius: 20px;
+    box-shadow: 1px 10px 20px gray;
+    overflow: hidden;
+}
+
+.visual{
+    width: 50%;
+    background-image: url(image/calculator.png);
+    background-size: cover;
+}
+
+.visual .darken{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(1, 1, 1, 0.33);
+}
+
+.enter-info{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.enter-info h1{
+    margin-top: 50px;
+    margin-bottom: 40px;
+    font-weight: 600;
+    letter-spacing: -1px;   
+}
+
+.enter-info .units{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.units button{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    padding: 0.5em 2em;
+    border-radius: 10px;
+    border: 1px solid black;
+    margin: 0px 50px;
+}
+
+.units .imperial{
+    background-color: rgb(134, 216, 98);
+    padding: 0.5em 1.2em;
+}
+
+.units .metric{
+    background-color: rgb(224, 224, 224);
+}
+
+.enter-info h4{
+    margin: 0px;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.gender-years .gender{
+    width: 200px;
+    margin-right: 30px;
+}
+
+.weight{
+    width: 75%;
+    height: 25px;
+}
+
+.feet-inches{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.feet,
+.inches{
+    width: 40%;
+    height: 1.5em;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+.feet{
+    margin-left: 40px;
+}
+
+.inches{
+    margin-right: 40px;
+}
+
+.enter-info .calculate{
+    width: 85%;
+    height: 2em;
+    /* font-family: 'Open Sans', sans-serif; */
+    color: white;
+    background-color: rgb(5, 162, 211);
+    border: none;
+    font-size: 1.1em;
+    font-weight: 700;
+    border-radius: 1em;
+    margin-top: 50px;
+    margin-bottom: 66px;
+    box-shadow: 1px 10px 20px gray;
+}
