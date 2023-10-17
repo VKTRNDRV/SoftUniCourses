@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Lato', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(84, 84, 109);
+}
+
+header{
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 100px;
+}
+
+header img{
+    height: 50%;
+}
+
+header ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+
+header ul li a{
+    text-decoration: none;
+    color: rgb(84, 84, 109);
+    font-size: 19px;
+    font-weight: 500;
+}
+
+.prices{
+    background-color: rgb(84, 84, 109);
+    height: 500px;
+    margin-bottom: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: visible;
+}
+
+.prices img{
+    position: absolute;
+    height: 250px;
+    left: -80px;
+    top: 200px;
+}
+
+.prices h2{
+    color: white;
+    font-size: 40px;
+    font-weight: 500;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.prices .cards-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    overflow: visible;
+}
+
+.card{
+    background-color: white;
+    width: 550px;
+    height: 450px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgb(51, 51, 51);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card h4{
+    font-size: 33px;
+    font-weight: 600;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.card .course-info{
+    color: rgb(84, 84, 109);
+    text-align: center;
+    width: 90%;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 25px;
+}
+
+.card a{
+    color: white;
+    background-color: rgb(154, 93, 198);
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 17px 40px;
+    border-radius: 100px;
+    box-shadow: 0px 5px 5px gray;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.card .bottom-banner {
+    align-self: flex-end;
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bottom-banner h6{
+    color: white;
+    font-size: 30px;
+    font-weight: 500;
+    margin-top: 30px;
+}
+
+.bottom-banner p{
+    color: white;
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+.card .double{
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.card .double .price{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card .last-p{
+    margin-bottom: 60px;
+}
+
+.vertical-line{
+    background-color: white;
+    width: 2px;
+    height: 100px;
+}
+
+.price p{
+    margin-bottom: 20px;
+}
+
+.green{
+    background-image: linear-gradient(to right, rgb(3, 155, 61), rgb(75, 214, 128));
+}
+
+.blue{
+    background-image: linear-gradient(to right, rgb(76, 107, 135), rgb(98, 155, 208));
+}
+
+.purple{
+    background-image: linear-gradient(to right, rgb(74, 55, 165), rgb(140, 125, 225));
+}
+
+.details{
+    margin-left: 12%;
+    margin-right: 12%;
+}
+
+.details h3{
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.details p{
+    font-size: 22px;
+    color: rgb(86, 86, 86);
+}
+
+.details .info{
+    margin-bottom: 50px;
+}
+
+.plan{
+    list-style: none;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.plan li{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 66px;
+}
+
+.grayed{
+    background-color: rgb(230, 230, 230);
+}
+
+.plan li .description{
+    margin-left: 20px;
+    width: 1000px;
+}
+
+.first-tick{
+    margin-right: 220px;
+}
+
+.check, .cross{
+    width: 25px;
+}
+
+.financing{
+    margin: 125px 6% 100px 6%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.financing img{
+    width: 500px;
+    height: fit-content;
+}
+
+.financing .info{
+    width: 1100px;
+}
+
+.financing .info h3{
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+
+.financing .info p{
+    color: rgb(86, 86, 86);
+    font-size: 22px;
+}
+
+.financing .info .has-margin{
+    margin-bottom: 20px;
+}
+
+footer{
+    background-color: rgb(84, 84, 109);
+    height: 100px;
+    color: rgb(144, 143, 171);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
