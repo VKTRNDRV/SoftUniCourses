@@ -1,0 +1,55 @@
+@media screen and (max-width: 600px){
+    .navigation-nav{
+        display: none;
+    }
+
+    .home-text{
+        display: none;
+    }
+
+    .home-tab-selector-cards-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .portofolio-card-speaker-card{
+        width: 100%;
+    }
+
+    .home-image-container{
+        display: none;
+    }
+
+    .home-process{
+        padding-top: 40px;
+    }
+
+    .home-text10{
+        margin-right: 50px;
+    }
+
+    .home-text12{
+        width: 90%;
+    }
+
+    .section-container{
+        padding-bottom: 20px;
+        padding-top: 40px;
+    }
+
+    .home-top-part,
+    .home-links-container{
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .home-subscribe-container{
+        width: 40%;
+    }
+
+    .home-subscribe-container button{
+        padding: 1.5em 2em;
+    }
+}
