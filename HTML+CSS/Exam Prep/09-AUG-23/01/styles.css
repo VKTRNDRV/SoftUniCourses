@@ -1,0 +1,141 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css);
+@import url(https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap);
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100vh;
+
+    background-image: url(images/background.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+main{
+    max-width: 1625px;
+    height: 850px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.first-two{
+    height: 850px;
+}
+
+.card{
+    background-color: white;
+    padding: 70px;
+    box-shadow: 0px 10px 30px rgb(64, 64, 64);
+}
+
+.horizontal-card{
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.vertical-card{
+    height: 850px;
+    padding: 70px 40px 20px 40px;
+    max-width: 535px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 650px;
+}
+
+.person-info{
+    display: flex;
+    flex-direction: row;
+    border-top: 1px solid lightgray;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.person-info span{
+    color: rgb(100, 100, 100);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+i{
+    font-size: 80px;
+}
+
+.large-quote{
+    font-size: 120px;
+}
+
+.quote{
+    font-size: 23px;
+    color: rgb(100, 100, 100);
+    width: 100%
+}
+
+h2{
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.narrow-quote{
+    width: 100%;
+}
+
+.first-two{
+    min-width: 1050px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.img-container{
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 250px;
+    max-height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.small-img-container{
+    min-width: 120px;
+    max-width: 120px;
+    min-height: 120px;
+    max-height: 120px;
+    filter: grayscale(100%);
+}
+
+.img-container img{
+    width: 100%;
+    height: auto;
+}

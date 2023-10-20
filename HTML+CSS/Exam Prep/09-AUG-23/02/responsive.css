@@ -1,0 +1,117 @@
+@media screen and (max-width:600px) {
+    
+    header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav{
+        width: fit-content;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    header nav ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 7px;
+    }
+
+    .header-title{
+        padding: 10px 0px;
+    }
+
+    .header-title h1{
+        font-size: 35px;
+    }
+
+    .header-title p{
+        font-size: 18px;
+    }
+
+    main{
+        overflow: hidden;
+    }
+
+    .team-description-wrapper ul{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .team-description-wrapper ul li{
+        width: 200px;
+        padding-bottom: 50px;
+    }
+
+    .team-description-wrapper ul li img{
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+    }
+
+    .team-description-wrapper ul li p{
+        font-size: 12px;
+    }
+
+    .about-us{
+        width: 100%;
+        margin: 0px;
+    }
+
+    .choose-us ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .choose-us ul li{
+        width: 50%;
+    }
+
+    .blog-list{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .blog-news ul .item {
+        width: 400px;
+        max-height: 200px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        background-color: white;
+    }
+
+    .blog-news ul .item .avatar{
+        height: 100%;
+        width: 66%;
+    }
+
+    .blog-news ul .item .avatar img{
+        height: 100%;
+        width: auto;
+    }
+
+    .blog-news .content{
+        padding: 0px 20px;
+        height: 100%;
+        width: 220px;
+    }
+
+    .content h4{
+        font-size: 14px;
+    }
+
+    .content p{
+        font-size: 12px;
+    }
+}
