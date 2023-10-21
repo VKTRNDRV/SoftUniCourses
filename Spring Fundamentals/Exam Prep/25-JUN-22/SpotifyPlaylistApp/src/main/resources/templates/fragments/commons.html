@@ -27,8 +27,9 @@
                 </li>
 
                 <li class="nav-item col-md-4" th:if="${@loggedUser.isLogged()}">
-                    <form th:action="@{/logout}" th:method="POST"></form>
-                    <button type="submit" class="nav-link text-white active h5">Logout</button>
+                    <form th:action="@{/logout}" th:method="POST">
+                        <button type="submit" class="nav-link text-white active h5">Logout</button>
+                    </form>
                 </li>
 
             </ul>
